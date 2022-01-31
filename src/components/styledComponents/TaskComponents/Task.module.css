@@ -1,0 +1,8 @@
+.task {
+  display: flex;
+  min-width: 320px;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 32px;
+  margin-bottom: 20px;
+}

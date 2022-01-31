@@ -1,0 +1,18 @@
+.createTaskBtn {
+  margin-left: 20px;
+  font-size: 28px;
+  border: none;
+  border-radius: 4px;
+  background: #fff;
+  color: rgb(35, 136, 223);
+  transition: all ease .2s;
+}
+
+.createTaskBtn:hover {
+  background: rgba(51, 92, 255, 0.386);
+  /* color: #fff; */
+}
+
+.createTaskBtn:active {
+  background: rgb(40, 205, 255);
+}

@@ -1,0 +1,10 @@
+.taskBtn {
+  background: #fff;
+  color: rgb(140, 32, 32);
+  font-size: 32px;
+  border: none;
+  cursor: pointer;
+}
+.taskBtn:hover {
+  color: #f00;
+}

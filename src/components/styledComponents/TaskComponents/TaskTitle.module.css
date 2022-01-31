@@ -1,0 +1,16 @@
+.taskTitle {
+  color: #ccc;
+  border: none;
+  font-size: 20px;
+}
+
+.taskTitle:focus {
+  color: #000;
+  border: 2px solid #000;
+}
+
+.taskTitle:disabled {
+  text-decoration: line-through;
+  background: #fff;
+  border: none;
+}

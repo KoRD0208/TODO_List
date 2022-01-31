@@ -1,0 +1,5 @@
+.filterList {
+  display: flex;
+  justify-content: space-between;
+  width: 220px;
+}
