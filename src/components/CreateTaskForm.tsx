@@ -17,6 +17,7 @@ function CreateTaskForm({ addTask }: CreateTaskFormProps) {
         onSubmit={(e) => {
           e.preventDefault();
           inputValue && addTask(inputValue);
+          setInputValue("");
         }}
       >
         <CreateTaskInput value={inputValue} checkInput={inputChange} />

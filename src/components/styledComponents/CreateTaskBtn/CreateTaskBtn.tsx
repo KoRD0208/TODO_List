@@ -1,7 +1,11 @@
 import React from "react";
 import classes from "./CreateTaskBtn.module.css";
 
-function CreateTaskBtn({ children, ...props }: any) {
+interface CreateBtnProps {
+  children: React.ReactNode;
+}
+
+function CreateTaskBtn({ children, ...props }: CreateBtnProps) {
   return (
     <button {...props} className={classes.createTaskBtn}>
       {children}

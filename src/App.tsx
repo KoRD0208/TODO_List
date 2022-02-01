@@ -2,16 +2,17 @@ import React, { useState, useRef } from "react";
 import "./App.css";
 import CreateTaskForm from "./components/CreateTaskForm";
 import TaskList from "./components/TaskList";
-import { Context } from "./components/Context";
-import { TaskProps } from "./types";
+import { Context } from "./components/TodosContext";
+import { Todos } from "./types";
 import FilterList from "./components/FilterList";
 import Filter from "./components/Filter";
 import Title from "./components/styledComponents/Title/Title";
+import { Alert } from "@mui/material";
 
 function App() {
-  const [tasks, setTasks] = useState<TaskProps[]>([]);
+  const [tasks, setTasks] = useState<Todos[]>([]);
   let [counter, setCounter] = useState(0);
-  const allTasksRef = useRef<TaskProps[]>([]);
+  const allTasksRef = useRef<Todos[]>([]);
 
   function addTask(taskName: string) {
     const newTasks = [
@@ -28,9 +29,9 @@ function App() {
     console.log(allTasksRef);
   }
 
-  function setTask(task: TaskProps) {
-    setTasks((prevTasks: TaskProps[]) => {
-      prevTasks.map((elem: TaskProps) => {
+  function setTask(task: Todos) {
+    setTasks((prevTasks: Todos[]) => {
+      prevTasks.forEach((elem: Todos) => {
         if (elem.id === task.id) elem.isCompleted = task.isCompleted;
       });
       return [...prevTasks];
@@ -39,9 +40,9 @@ function App() {
     console.log(allTasksRef);
   }
 
-  function editTask(editedTask: TaskProps) {
-    setTasks((prevTasks: TaskProps[]) => {
-      prevTasks.map((task: TaskProps) => {
+  function editTask(editedTask: Todos) {
+    setTasks((prevTasks: Todos[]) => {
+      prevTasks.forEach((task: Todos) => {
         if (task.id === editedTask.id) {
           task.taskName = editedTask.taskName;
         }
@@ -54,7 +55,7 @@ function App() {
 
   function removeTask(id: number) {
     console.log("Deleted");
-    const updatedTasks = tasks.filter((task: TaskProps) => {
+    const updatedTasks = tasks.filter((task: Todos) => {
       return task.id !== id;
     });
     setTasks(updatedTasks);
@@ -79,7 +80,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="container">
       <Title>TODO List</Title>
       <CreateTaskForm addTask={addTask} />
       <Context.Provider value={{ setTask, editTask, removeTask }}>

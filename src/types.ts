@@ -1,15 +1,15 @@
-export interface TaskProps {
+export interface Todos {
   id: number;
   taskName: string;
   isCompleted: number;
 }
 
 export interface TasksProps {
-  tasks: TaskProps[];
+  tasks: Todos[];
 }
 
 export interface TaskBlockProps {
-  task: TaskProps;
+  task: Todos;
 }
 
 export interface CreateTaskFormProps {

@@ -1,7 +1,11 @@
 import React from "react";
 import classes from "./Title.module.css";
 
-function Title({ children }: any) {
+interface TitleProps {
+  children: React.ReactNode;
+}
+
+function Title({ children }: TitleProps) {
   return <div className={classes.title}>{children}</div>;
 }
 

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Context } from "./Context";
+import { Context } from "./TodosContext";
 import { TaskBlockProps } from "../types";
 import TaskBtn from "./styledComponents/TaskComponents/TaskBtn";
 import classes from "./styledComponents/TaskComponents/Task.module.css";
