@@ -1,7 +1,18 @@
 import React from "react";
 import classes from "./TaskTitle.module.css";
 
-function TaskTitle({ value, checkboxState, handleChange, ...props }: any) {
+interface TaskTitleProps {
+  value: string;
+  checkboxState: boolean;
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+function TaskTitle({
+  value,
+  checkboxState,
+  handleChange,
+  ...props
+}: TaskTitleProps) {
   return (
     <input
       type="text"

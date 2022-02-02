@@ -1,7 +1,10 @@
 import React from "react";
 import Task from "./Task";
 import { Todos } from "../types";
-import { TasksProps } from "../types";
+
+interface TasksProps {
+  tasks: Todos[];
+}
 
 function TaskList({ tasks }: TasksProps) {
   return (

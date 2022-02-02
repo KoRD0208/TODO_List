@@ -1,7 +1,11 @@
 import React from "react";
-import { CreateTaskInputProps } from "../../../types";
-import classes from "./CreateTaskInput.module.css";
+
 import { TextField } from "@mui/material";
+
+interface CreateTaskInputProps {
+  value: string;
+  checkInput: (value: string) => void;
+}
 
 function CreateTaskInput({ value, checkInput }: CreateTaskInputProps) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

@@ -1,9 +1,13 @@
 import React, { useContext } from "react";
 import { Context } from "./TodosContext";
-import { TaskBlockProps } from "../types";
+import { Todos } from "../types";
 import TaskBtn from "./styledComponents/TaskComponents/TaskBtn";
 import classes from "./styledComponents/TaskComponents/Task.module.css";
 import TaskTitle from "./styledComponents/TaskComponents/TaskTitle";
+
+interface TaskBlockProps {
+  task: Todos;
+}
 
 function Task({ task }: TaskBlockProps) {
   const { setTask, editTask, removeTask } = useContext(Context);

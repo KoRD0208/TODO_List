@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import CreateTaskBtn from "./styledComponents/CreateTaskBtn/CreateTaskBtn";
 import CreateTaskInput from "./styledComponents/CreateTaskInput/CreateTaskInput";
-import { CreateTaskFormProps } from "../types";
+
+interface CreateTaskFormProps {
+  addTask: (value: string) => void;
+}
 
 function CreateTaskForm({ addTask }: CreateTaskFormProps) {
   let [inputValue, setInputValue] = useState("");
