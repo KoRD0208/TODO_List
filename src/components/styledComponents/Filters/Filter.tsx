@@ -1,12 +1,17 @@
 import React from "react";
-// import classes from "./styledComponents/Filters/Filter.module.css";
+import classes from "./Filter.module.css";
 
-// function Filter({ setFiltered, name, isFiltered }: any) {
-//   return (
-//     <div onClick={} className={classes.filter}>
-//       {name}
-//     </div>
-//   );
-// }
+interface FilterProps {
+  name: string;
+  filterFunc: () => void;
+}
 
-// export default Filter;
+function Filter({ name, filterFunc }: FilterProps) {
+  return (
+    <div className={classes.filter} onClick={filterFunc}>
+      {name}
+    </div>
+  );
+}
+
+export default Filter;
